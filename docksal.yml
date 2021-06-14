@@ -27,8 +27,6 @@ services:
       # - '3000:3000'
       # BrowserSync UI
       # - '3001:3001'
-      # VUE UI
-      # - '8000:8000'
   
   # Database Container
   db:
@@ -66,3 +64,9 @@ services:
     depends_on:
       - cli
       - db
+
+  # Redis
+  redis:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: redis
